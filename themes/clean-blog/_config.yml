@@ -4,9 +4,9 @@ menu:
   文档: /archives
   标签: /tags
   分类: /categories
-  # Github:
-  #   url: https://github.com/ZLMisMeNO1
-  #   icon: github
+  Github:
+    url: https://github.com/ZLMisMeNO1
+    icon: github
 
 # Title on top left of menu. Leave empty to use main blog title
 menu_title: 生活是最好的老师

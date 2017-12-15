@@ -1,5 +1,5 @@
 prev: Older Posts
 next: Newer Posts
 comment: Comments
-archive_a: Archives
-archive_b: "Archives: %s"
+archive_a: 文档
+archive_b: "文档: %s"
