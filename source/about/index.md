@@ -10,6 +10,9 @@
     - elasticsearch
 - nodejs
 - sql
+    - mysql
+    - sql server
+    - oracle 
 - nosql
     - redis
     - mongoDB
