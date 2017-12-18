@@ -1,7 +1,7 @@
 ---
-title: 前期准备（window + eclipse）
-tags: elasticsearch
-categories: java 
+title: elasticsearch-前期准备（window + eclipse）
+tags: java 
+categories: elasticsearch
 date: 2017-12-01
 ---
 

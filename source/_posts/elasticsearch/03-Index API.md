@@ -1,7 +1,7 @@
 ---
-title: index api
-tags: elasticsearch
-categories: java 
+title: elasticsearch-index api
+tags: java 
+categories: elasticsearch
 date: 2017-12-03
 ---
 

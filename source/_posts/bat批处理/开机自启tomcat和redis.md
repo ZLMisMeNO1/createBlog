@@ -1,7 +1,7 @@
 ---
 title: 开机自启动tomcat和redis
-tags: bat
-categories: 批处理
+tags: 批处理
+categories: bat
 ---
 
 配置文件 conf.ini

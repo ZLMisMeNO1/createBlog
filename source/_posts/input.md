@@ -1,7 +1,7 @@
 ---
 title: 监听input textarea改变事件
-tags: jQuery
-categories: 前端
+tags: 前端
+categories: jQuery
 ---
 
 #### 监听input\textarea改变事件

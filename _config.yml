@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: i7baoZ ; heal the world or me
+title: 积累
 subtitle:
-description:
+description: 宁欺白须翁，莫欺少年穷。
 author: i7baoZ
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: clean-blog
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
