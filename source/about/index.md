@@ -8,6 +8,7 @@
     - struts2
     - hibernate
     - elasticsearch
+- nodejs
 - sql
 - nosql
     - redis
