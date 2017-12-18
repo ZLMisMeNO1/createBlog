@@ -15,7 +15,8 @@ timezone:
 url: http://www.i7baoz.cn/
 root: /
 permalink: :year/:month/:day/:title/
-permalink_defaults:
+permalink_defaults: 
+
 
 # Directory
 source_dir: source
