@@ -13,6 +13,8 @@ date: 2017-11-30
 [官方中文文档](https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html)
 
 [官方客户端api](https://www.elastic.co/guide/en/elasticsearch/client/index.html)
+
+[国内文档](https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html)
 ***
 
 #### 相关中文简介以及简单操作
