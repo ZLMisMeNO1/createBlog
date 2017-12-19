@@ -18,6 +18,9 @@ date: 2017-11-30
 #### 相关中文简介以及简单操作
 [阮一峰-全文搜索引擎 Elasticsearch 入门教程](http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html)
 
+#### 谷歌翻译
+[谷歌翻译](https://translate.google.cn/)
+
 ##### 个人理解elasticsearch术语
 
 关系型数据库 | elasticsearch 

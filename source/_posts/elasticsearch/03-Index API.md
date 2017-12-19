@@ -8,7 +8,7 @@ date: 2017-12-03
 
 [官方文档--Index API](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.0/java-docs-index.html)
 
-### 生成JSON文档
+#### 生成JSON文档
 
 生成方式
 
@@ -86,7 +86,7 @@ private XContentBuilder builderSource() throws Exception {
 > String json = xcbSource.string();
 
 
-### 索引文档
+#### 索引文档
 
 > 理解为将文档保存
 
@@ -136,4 +136,69 @@ String documentId = response.getId();
 long documentVersion = response.getVersion();
 //操作状态  CREATED / UPDATED / DELETED / NOT_FOUND / NOOP
 RestStatus status = response.status();
+```
+
+#### 索引数据
+
+> 此处数据在以后用到
+
+```java
+public class PreparedBean {
+
+	private String id;
+	
+	private String name;
+	
+	private Integer age;
+	
+	private Timestamp updateTime;
+
+	private Date birth;
+	
+	private Float hight;
+	
+	private Double weight;
+	
+	private Boolean isBoy;
+    ...
+}
+```
+
+```java
+private String[] ids = new String[17];
+	private String[] names = new String[17];
+	private Integer[] ages = new Integer[17];
+	private Timestamp[] updateTimes = new Timestamp[17];
+	private Date[] births = new Date[17];
+	private Float[] hights = new Float[17];
+	private Double[] weights = new Double[17];
+	private Boolean[] isBoys = new Boolean[17];
+	@Test
+	public void initData () throws Exception {
+		//模拟数据库数据
+		for(int i=0;i<17;i++) {
+			ids[i] = String.valueOf(i);
+			names[i] = String.valueOf("name_" + i);
+			ages[i] = i;
+			updateTimes[i] = new Timestamp(System.currentTimeMillis()-90000);
+			births[i] = new Date(System.currentTimeMillis()-704760);
+			hights[i] = new Random().nextFloat();
+			weights[i] = new Random().nextDouble();
+			isBoys[i] = ( i % 2 == 0 ? true : false);
+		}
+		BulkRequest bulk = new BulkRequest();
+		PreparedBean bean;
+		IndexRequest indexRequest;
+		ObjectMapper mapper = new ObjectMapper();
+		//使用bean的方式索引
+		for(int i=0;i<17;i++) {
+			bean = new PreparedBean(ids[i],names[i],ages[i],updateTimes[i] ,births[i],hights[i],
+					weights[i],isBoys[i]);
+			indexRequest = new IndexRequest("person","info",ids[i]);
+			indexRequest.source(mapper.writeValueAsBytes(bean),XContentType.JSON);
+			bulk.add(indexRequest);
+		}
+		BulkResponse response = client.bulk(bulk);
+		System.out.println(response.status());
+	}
 ```
