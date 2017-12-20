@@ -1,11 +1,11 @@
 ---
-title: elasticsearch-get api
+title: elasticsearch-获取文档
 tags: java 
 categories: elasticsearch
 date: 2017-12-04
 ---
 
-## Get API
+## Get API 获取
 
 ### Get Request实例化
 
@@ -31,7 +31,7 @@ public void get() throws IOException {
 getRequest.version(long version);
 ```
 
-##### 设置要抓取的源数据
+##### 局部查询
 ```java
 getRequest.fetchSourceContext(FetchSourceContext context);
 ```

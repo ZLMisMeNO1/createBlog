@@ -2,6 +2,7 @@
 title: 开机自启动tomcat和redis
 tags: 批处理
 categories: bat
+date: 2017-11-04
 ---
 
 配置文件 conf.ini

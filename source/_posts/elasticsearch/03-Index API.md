@@ -1,11 +1,11 @@
 ---
-title: elasticsearch-index api
+title: elasticsearch-建立索引
 tags: java 
 categories: elasticsearch
 date: 2017-12-03
 ---
 
-
+### 索引
 [官方文档--Index API](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.0/java-docs-index.html)
 
 #### 生成JSON文档

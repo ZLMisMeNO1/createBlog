@@ -1,11 +1,11 @@
 ---
-title: elasticsearch-delete api
+title: elasticsearch-删除文档
 tags: java 
 categories: elasticsearch
 date: 2017-12-05
 ---
 
-## Delete API
+## Delete API 删除
 
 ### Delete Request实例化
 
@@ -18,12 +18,12 @@ DeleteRequest request = new DeleteRequest(indexName,type,documentId);
 ##### 路由
 
 ```java
-getRequest.routing("routing");
+request.routing("routing");
 ```
 ##### 父级文档id
 
 ```java
-getRequest.parent("parent"); 
+request.parent("parent"); 
 ```
 
 ##### 超时时间

@@ -7,9 +7,19 @@ date: 2017-12-02
 
 
 
-#### Java High Level Rest Client
+#### Java High Level Rest Client 高级rest客户端
+
+我们计划在Elasticsearch 7.0 中弃用TransportClient，在Elasticsearch 8.0时完全移除。相反，推荐使用the Java High Level REST Client，它执行HTTP请求而不是序列化java请求。
+> We plan on deprecating the TransportClient in Elasticsearch 7.0 and removing it completely in 8.0. Instead, you should be using the Java High Level REST Client, which executes HTTP requests rather than serialized Java requests. 
+
+java高级rest客户端目前支持更常用的api，但仍然还有更多需要添加的东西。
+> The Java High Level REST Client currently has support for the more commonly used APIs, but there are a lot more that still need to be added. 
+
+任何缺少的api都可以通过使用具有json请求和响应主体的低级java rest客户端来实现。
+> Any missing APIs can always be implemented today by using the low level Java REST Client with JSON request and response bodies.
 
 [关于javaHighLevelRestClien](https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high.html)
+
 > The Java High Level REST Client works on top of the Java Low Level REST client. Its main goal is to expose API specific methods, that accept request objects as an argument and return response objects, so that request marshalling and response un-marshalling is handled by the client itself.
 
 Java高级别REST客户端在Java低级别REST客户端上工作。 其主要目标是公开API接口的具体方法，接受请求对象作为参数并返回响应对象，以便请求编组和响应解组由客户端自己处理。
@@ -38,13 +48,14 @@ public void getClient() {
     );
 }
 ```
+高级客户端将在内部创建用于基于提供的构建器执行请求的低级客户端，并管理其生命周期。
 > The high-level client will internally create the low-level client used to perform requests based on the provided builder, and manage its lifecycle.
 
-高级客户端将在内部创建用于基于提供的构建器执行请求的低级客户端，并管理其生命周期。
-
-> The high-level client instance needs to be closed when no longer needed so that all the resources used by it get properly released, as well as the underlying http client instance and its threads. This can be done through the close method, which will close the internal RestClient instance.
 
 当不再需要高级客户端实例时，需要关闭高级客户端实例，以便使用的所有资源以及底层http客户端实例及其线程都得到正确释放。 这可以通过close方法来完成，这将关闭RestClient的内部实例。
+> The high-level client instance needs to be closed when no longer needed so that all the resources used by it get properly released, as well as the underlying http client instance and its threads. This can be done through the close method, which will close the internal RestClient instance.
+
+
 
 ```java
 //关闭客户端

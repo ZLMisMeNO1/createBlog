@@ -2,6 +2,7 @@
 title: 监听input textarea改变事件
 tags: 前端
 categories: jQuery
+date: 2017-11-03
 ---
 
 #### 监听input\textarea改变事件
