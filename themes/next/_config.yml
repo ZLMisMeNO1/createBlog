@@ -19,10 +19,10 @@ override: false
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  # small: /images/favicon-16x16-next.png
+  # medium: /images/favicon-32x32-next.png
+  # apple_touch_icon: /images/apple-touch-icon-next.png
+  # safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
@@ -85,9 +85,9 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
+  archives: /archives/ || archive
   tags: /tags/ || tags
   categories: /categories/ || th
-  archives: /archives/ || archive
   about: /about/ || user
   plan: /plan/ || thumbs-o-up
   
@@ -149,7 +149,7 @@ links_layout: block
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+avatar: /images/avatar.png
 
 # Table Of Contents in the Sidebar
 toc:
@@ -803,6 +803,7 @@ vendors:
 css: css
 js: js
 images: images
+
 
 # Theme version
 version: 5.1.3

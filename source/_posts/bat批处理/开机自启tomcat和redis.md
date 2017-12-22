@@ -17,7 +17,7 @@ dc-bin=E:\apache-tomcat-dc ;tomcat-dc所在文件夹
 app-port=8080
 app-bin=E:\apache-tomcat-app ;tomcat-app所在文件夹
 ```
-
+<!-- more -->
 start.bat
 ```bat
 rem 获取配置文件 使用 %key% 获取值

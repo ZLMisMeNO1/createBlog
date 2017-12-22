@@ -11,6 +11,7 @@ date: 2017-12-01
 - elasticsearch-rest-high-level-client  6.0.1
 #### 前期准备
 
+<!-- more -->
 - java
     - jdk1.8及以上
     - 配置环境变量

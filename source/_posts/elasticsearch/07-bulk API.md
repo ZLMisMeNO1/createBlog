@@ -14,7 +14,7 @@ date: 2017-12-07
 #### BulkRequest 
 BulkRequest可以用于使用单一请求多个操作，
 或多个更新或删除操作。
-
+<!-- more -->
 添加索引
 ```java
 BulkRequest request = new BulkRequest(); 

@@ -12,6 +12,8 @@ date: 2017-12-02
 我们计划在Elasticsearch 7.0 中弃用TransportClient，在Elasticsearch 8.0时完全移除。相反，推荐使用the Java High Level REST Client，它执行HTTP请求而不是序列化java请求。
 > We plan on deprecating the TransportClient in Elasticsearch 7.0 and removing it completely in 8.0. Instead, you should be using the Java High Level REST Client, which executes HTTP requests rather than serialized Java requests. 
 
+<!-- more -->
+
 java高级rest客户端目前支持更常用的api，但仍然还有更多需要添加的东西。
 > The Java High Level REST Client currently has support for the more commonly used APIs, but there are a lot more that still need to be added. 
 

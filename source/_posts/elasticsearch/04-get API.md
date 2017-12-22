@@ -12,6 +12,7 @@ date: 2017-12-04
 ```java
 GetRequest request = new GetRequest(indexName,type,documentId);
 ```
+<!-- more -->
 e.g.
 ```java
 public void get() throws IOException {

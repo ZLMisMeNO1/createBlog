@@ -10,6 +10,8 @@ date: 2017-11-03
     <input type="text" id="txtInput">
     <textarea id="txtArea" >
 ```
+
+<!-- more -->
 #### 引入jQuery库
 
 #### js

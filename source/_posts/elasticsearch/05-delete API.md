@@ -12,7 +12,7 @@ date: 2017-12-05
 ```java
 DeleteRequest request = new DeleteRequest(indexName,type,documentId);
 ```
-
+<!-- more -->
 #### 可选参数
 
 ##### 路由

@@ -9,7 +9,7 @@ date: 2017-12-03
 [官方文档--Index API](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.0/java-docs-index.html)
 
 #### 生成JSON文档
-
+<!-- more -->
 生成方式
 
 1.手动生成字符串形式
@@ -24,6 +24,7 @@ public String jsonSource() {
 	return jsonSource;
 }
 ```
+
 2.使用自己的bean
 ```java
 public class TestBean {

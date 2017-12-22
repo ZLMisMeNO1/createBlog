@@ -8,7 +8,7 @@ date: 2017-12-06
 ## Update API 更新
 
 ### 准备工作
-
+<!-- more -->
 ①.先查询一个存在的文档
 ```java
 @Test
@@ -23,6 +23,7 @@ public void query() throws IOException {
     
 }
 ```
+
 ②.查询一个不存在的文档
 ```java
 @Test
@@ -36,7 +37,6 @@ public void query() throws IOException {
     }
 }
 ```
-
 ### Update Request 实例化
 ```java
 UpdateRequest update = new UpdateRequest(indexName,type,documentId);
