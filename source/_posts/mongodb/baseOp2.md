@@ -170,3 +170,67 @@ db.(collectionName).update({查询器},{修改器}[,是否插入,是否批量更
 {$pop:{field:1/-1}} | 
 
 从指定数组删除一个值，1删除最后一个值，-1删除第一个值
+
+db.updateTest.update({name:'bbb'},{$pop:{game:1}})
+
+```
+{ "_id" : ObjectId("5a60568e19b87d79059ce175"), "name" : "bbb", "gendar" : "man", "height" : 170, "game" : [ "lol", "cf", "coc", "pubg", "h1z1" ], "game1" : [ "QQ飞车" ], "game2" : [ [ "穿越火线", "穿越土线" ] ] }
+```
+
+### $pull
+
+语法|案例
+--|--
+{$pull:{field:value}} |
+
+删除数组中一个被指定的值
+
+db.updateTest.update({name:'bbb'},{$pull:{game:'coc'}}) 
+
+```
+{ "_id" : ObjectId("5a60568e19b87d79059ce175"), "name" : "bbb", "gendar" : "man", "height" : 170, "game" : [ "lol", "cf", "pubg", "h1z1" ], "game1" : [ "QQ飞车" ], "game2" : [ [ "穿越火线", "穿越土线" ] ] }
+```
+### $pullAll
+
+语法|案例
+--|--
+{$pullAll:{field:array}} |
+
+一次性删除数组中多个指定的值
+
+db.updateTest.update({name:'bbb'},{$pullAll:{game:['lol','cf']}})
+
+### 数组定位器$
+
+如果数组中有多个值，我们只想对其中一部分进行操作，就要用'$'
+
+准备文档
+
+
+db.test.insert({name:'abc',age:25,books:[{type:'js',name:'extjs4'},{type:'js',name:'jquery'},{type:'db',name:'mongodb'}]})
+
+查看该文档
+db.test.find({name:'abc','books.type':'js'}) // 注意 books.type 必须用引号引起来
+
+现在我们要把type等于js的文档增加一个相同的作者author:'zhang'
+db.test.update({"books.type":'js'},{$set:{'books.$.author':'zhang'}})
+
+再次查看该文档
+db.test.find({name:'abc','books.type':'js'})
+
+```
+{ "_id" : ObjectId("5a6588231ecc368cc1fa84e9"), "name" : "abc", "age" : 25, "books" : [ { "type" : "js", "name" : "extjs4", "author" : "zhang" }, { "type" : "js", "name" : "jquery" }, { "type" : "db", "name" : "mongodb" } ] }
+```
+
+> 这里只修改了一个 ？ 可能是版本的问题？ 
+> 后续会解决 ~！~
+
+### $addToSet和$each结合使用
+
+
+准备数据
+db.test.insert({name:'zhang',books:['js','jquery']})
+检查数据
+db.test.find({name:'zhang'})
+将 java ,sql server加入到books中
+db.test.update({name:'zhang'},{$addToSet:{books:{$each:['java','sql server']}}})
