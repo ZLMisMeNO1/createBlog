@@ -23,7 +23,7 @@ db.map.insert({gis:{x:185,y:185}})
 db.map.insert({gis:{x:200,y:200}})
 db.map.insert({gis:{x:200,y:0}})
 ```
-
+<!-- more-->
 ### 添加2D索引
 
 ```
