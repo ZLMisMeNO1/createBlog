@@ -1,7 +1,7 @@
 ---
 title: shiro-文档
-tags: java 
-categories: shiro
+tags: shiro
+categories: java 
 date: 2018-01-01
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: mongodb-bson简介
-tags: nosql
-categories: mongodb
+tags: mongodb
+categories: nosql
 date: 2018-01-01
 ---
 

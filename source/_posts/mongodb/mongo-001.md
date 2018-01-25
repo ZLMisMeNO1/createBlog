@@ -1,7 +1,7 @@
 ---
 title: mongodb-常用配置项、与关系型数据库的对比、命名规则
-tags: nosql
-categories: mongodb
+tags: mongodb
+categories: nosql
 date: 2018-01-01
 ---
 

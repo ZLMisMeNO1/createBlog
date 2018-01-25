@@ -1,7 +1,7 @@
 ---
 title: mongodb-文档查询
-tags: nosql
-categories: mongodb
+tags: mongodb
+categories: nosql
 date: 2018-01-24
 ---
 
@@ -12,6 +12,7 @@ date: 2018-01-24
 3. db.user.insert({name:'gu',age:22,games:['phone','lol'],books:[{type:'js',name:'jQuery'},{type:'server',name:'java'},{type:'db',name:'mysql'}]})
 4. db.user.insert({name:'bao',age:12,games:['coc','lol'],books:[{type:'db',name:'oracle'},{type:'server',name:'java'},{type:'db',name:'mysql'}]})
 ```
+<!-- more-->
 ### 格式
 db.collectionName.find(条件,{显示的键})
 显示键 通过 key:0/1来确定，1代表该值显示，0代表该值不显示
@@ -68,4 +69,49 @@ db.user.find({'books.name':{$all:['oracle','mysql']}},{name:1})
 ```
 > **$size不能与比较操作符一起使用**
 
-### 
+### $size
+
+如果要查询游戏数为3的学生，则先要在文档中添加size属性，然后每次更新游戏时管理size，最后再使用该字段。
+也就是：要解决$size不能与比较查询符一起使用的弊端，需要建立一个key存储这个size就行。
+
+### $slice 操作符返回文档中指定数组的内部值(从1开始，包头包尾)
+> $slice为-1时显示最后一个
+
+```
+查询name为zhang的用户，游戏只显示最后一个，书籍也只显示最后一个
+db.user.find({name:'zhang'},{games:{$slice:-1},books:{$slice:-1}})
+
+查询name为zhang的用户，游戏显示第一个和第二个，书籍只显示最后一个
+db.user.find({name:'zhang'},{games:{$slice:[1,2]},books:{$slice:-1}})
+```
+### $elemMatch 数组中每一项都要匹配
+```
+数据准备
+
+db.student.insert({name:'xiaogang',schools:[{school:'A',score:'B'},{school:'B',score:'B'}]})
+db.student.insert({name:'xiaohong',schools:[{school:'A',score:'A'},{school:'B',score:'B'}]})
+db.student.insert({name:'xiaoli',schools:[{school:'A',score:'A'},{school:'B',score:'A'}]})
+db.student.insert({name:'xiaozhao',schools:[{school:'A',score:'B'},{school:'B',score:'A'}]})
+
+查询在学校A获得A成绩的学生
+错误示范
+db.student.find({'schools.school':'A','schools.score':'A'})  ×
+正确示范
+db.student.find({schools:{$elemMatch:{school:'A',score:'A'}}}) √
+
+```
+
+### $where 复杂查询
+复杂查询由$where万能查询器来实现，但要尽量避免使用，有性能代价。
+
+```
+查询在学校A获得A成绩的学生
+db.student.find({'$where':function(){
+    var schools = this.schools;
+    for ( var i=0;i<schools.length;i++) {
+        if ( schools[i].school == 'A' && schools[i].score == 'A') {
+            return true;
+        }
+    }
+}})
+```

@@ -1,7 +1,7 @@
 ---
 title: mongodb-基本操作（一）
-tags: nosql
-categories: mongodb
+tags: mongodb
+categories: nosql
 date: 2018-01-15
 ---
 

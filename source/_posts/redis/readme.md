@@ -1,7 +1,7 @@
 ---
 title: redis-安装
-tags: nosql
-categories: redis
+tags: redis
+categories: nosql
 date: 2018-01-01
 ---
 
