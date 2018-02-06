@@ -20,7 +20,7 @@ db.collectionName.ensureIndex({key:1/-1})
 为number建立正序索引
 db.books.ensureIndex({number:1})
 ```
-
+<!-- more-->
 索引使用需要注意的地方
 1. 索引的创建在提高查询性能的同时会影响插入的性能。对于经常查询少插入的文档可以考虑用索引
 2. 使用索引注意索引的先后顺序
